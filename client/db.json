@@ -1,0 +1,166 @@
+{
+  "user": [
+    {
+      "id": "3fd2",
+      "FirstName": "jayakumar",
+      "LastName": "LA",
+      "email": "akumarancse843@gmail.com",
+      "phoneNumber": "9514101288",
+      "password": "N8Y6E54"
+    },
+    {
+      "id": "f2ad",
+      "FirstName": "JAYAKUMAR",
+      "LastName": "23",
+      "email": "akumarancse843@gmail.com",
+      "phoneNumber": "1",
+      "password": "112MF31"
+    },
+    {
+      "id": "416d",
+      "FirstName": "Jayakumar",
+      "LastName": "Jk",
+      "email": "jkrkumar1801@gmail.com",
+      "phoneNumber": "9514101288",
+      "password": "Iamjk1801"
+    },
+    {
+      "id": "e99b",
+      "FirstName": "Sri",
+      "LastName": "Ranjani",
+      "email": "sriranjani2206@gmail.com",
+      "phoneNumber": "9514101288",
+      "password": "slv oqgm`2--03"
+    },
+    {
+      "id": "8fa8",
+      "FirstName": "Jayakumar",
+      "LastName": "Jk",
+      "email": "jkrkumar1801@gmail.com",
+      "phoneNumber": "7836629342",
+      "password": "mdsncoeo34"
+    },
+    {
+      "id": "756e",
+      "FirstName": "Jothivel",
+      "LastName": "k",
+      "email": "Suryakingsurya001@gmail.com",
+      "phoneNumber": "9514101288",
+      "password": "mdiwudh`28"
+    },
+    {
+      "id": "4110",
+      "FirstName": "Balaji",
+      "LastName": "B",
+      "email": "akumarancse843@gmail.com",
+      "phoneNumber": "01279368751",
+      "password": "scnj72"
+    },
+    {
+      "id": "b6bd",
+      "FirstName": "Kavin",
+      "LastName": "k",
+      "email": "Kasncuc@gmail.com",
+      "phoneNumber": "9887152781",
+      "password": ",sdnciu7820"
+    },
+    {
+      "id": "8a20",
+      "FirstName": "Abinaya",
+      "LastName": "M",
+      "email": "abinayamurugan@gmail.com",
+      "phoneNumber": "9514201822",
+      "password": ",;osduyr778"
+    },
+    {
+      "id": "be84",
+      "FirstName": "Sri",
+      "LastName": "M",
+      "email": "sriranjani2206@gmail.com",
+      "phoneNumber": "9514101288",
+      "password": "k scifu198"
+    },
+    {
+      "id": "7b59",
+      "FirstName": "Jayakumar",
+      "LastName": "k",
+      "email": "jayakumarjayakrishnanjk@gmail.com",
+      "phoneNumber": "",
+      "password": "gh"
+    },
+    {
+      "id": "27c0",
+      "FirstName": "Sri",
+      "LastName": "mlkm",
+      "email": "jkrkumar1801@gmail.com",
+      "phoneNumber": "09y7958",
+      "password": "n j"
+    },
+    {
+      "id": "e992",
+      "FirstName": "Jayakumar",
+      "LastName": "k",
+      "email": "jayakumarjayakrishnanjk@gmail.com",
+      "phoneNumber": "9514101288",
+      "password": ",sxbxilwj"
+    }
+  ],
+  "products": [
+    {
+      "href": "/collections/shampoo",
+      "imgSrc": "https://theskinstore.in/cdn/shop/files/SHAMPOO-2_300x.png?v=1664290773",
+      "alt": "Shampoo",
+      "title": "Shampoo",
+      "id": "291b"
+    },
+    {
+      "href": "/collections/hair-colours-dye",
+      "imgSrc": "https://theskinstore.in/cdn/shop/files/HAIR-COLOR_300x.png?v=1664290773",
+      "alt": "Hair Colours / Dye",
+      "title": "Hair Colours",
+      "id": "6b69"
+    },
+    {
+      "href": "/collections/face-wash",
+      "imgSrc": "https://theskinstore.in/cdn/shop/files/FACEWASH_300x.png?v=1664290774",
+      "alt": "Face Wash",
+      "title": "Face Wash",
+      "id": "bf07"
+    },
+    {
+      "href": "/collections/toners",
+      "imgSrc": "https://theskinstore.in/cdn/shop/files/TONER-ICON_4113c9fb-e4ee-4599-ac08-7acfc4b574ae_300x.png?v=1664290773",
+      "alt": "Toners",
+      "title": "Toners",
+      "id": "3f27"
+    },
+    {
+      "href": "/collections/moisturizer",
+      "imgSrc": "https://theskinstore.in/cdn/shop/files/MOISTERIZER_300x.png?v=1664290773",
+      "alt": "Moisturizer",
+      "title": "Moisturizer",
+      "id": "ff97"
+    },
+    {
+      "href": "/collections/sunscreens",
+      "imgSrc": "https://theskinstore.in/cdn/shop/files/SUNSCREEN_29d16463-8b58-43b0-b3c8-d7512f1e7b80_300x.png?v=1664290773",
+      "alt": "Sunscreens",
+      "title": "Sunscreens",
+      "id": "c091"
+    },
+    {
+      "href": "/collections/serums",
+      "imgSrc": "https://theskinstore.in/cdn/shop/files/SERUM_300x.png?v=1664290775",
+      "alt": "Serums",
+      "title": "Serums",
+      "id": "9a1e"
+    },
+    {
+      "href": "/collections/masks",
+      "imgSrc": "https://theskinstore.in/cdn/shop/products/Mask_300x.png?v=1677584585",
+      "alt": "Masks",
+      "title": "Masks",
+      "id": "03e5"
+    }
+  ]
+}
