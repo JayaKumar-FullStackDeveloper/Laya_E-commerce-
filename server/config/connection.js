@@ -1,12 +1,18 @@
 const mongoose = require("mongoose");
-const connect = ()=>{
-    mongoose.connect("mongodb+srv://Jayakumar:Iamjk1801@layadb.hsx5hvy.mongodb.net/Layadb")
-  .then((result) => {
-    console.log("Database Connected");
-  })
-  .catch((err) => {
-    console.log("Error in Database connection:", err);
-  });
-}
+const dotenv = require('dotenv');
+dotenv.config();
 
-module.exports = connect
+const connectdb = async () => {
+  try {
+    const conn = await mongoose.connect(process.env.MONGODB_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log(`MongoDB connected: ${conn.connection.host}`);
+  } catch (error) {
+    console.error(`Error: ${error.message}`);
+    process.exit(1);
+  }
+};
+
+module.exports = connectdb;

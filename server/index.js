@@ -1,17 +1,34 @@
-const express = require("express");
-const cors = require("cors");
-const connect = require("./config/connection")
-const router = require("./routes/userRouter")
-const authRouter = require("./routes/authUserRouter")
+// index.js
+const express = require('express');
+const dotenv = require('dotenv');
+const connectDB = require('./config/connection');
+const cors = require('cors');
+const adminRoutes = require('./routes/adminRoutes');
+const userRoutes = require('./routes/userRoutes');
+const { notFound, errorHandler } = require('./middleware/errorMiddleware');
 
+// Load environment variables
+dotenv.config();
 
+// Initialize Express app
 const app = express();
-app.use(express.json())
-app.use("/auth",authRouter)
-app.use(router)
+
+// Enable CORS for all routes
 app.use(cors());
-connect()
-const port = 4000;
-app.listen(port, () => {
-  console.log("This Orders project is running on port:", port);
-});
+connectDB();
+
+// Middleware to parse JSON bodies
+app.use(express.json());
+
+
+// Routes
+app.use('/admin', adminRoutes);
+app.use('/user', userRoutes);
+
+// Error handling middlewares
+app.use(notFound);
+app.use(errorHandler);
+
+// Start server
+const PORT = process.env.PORT || 4000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

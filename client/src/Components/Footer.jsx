@@ -8,7 +8,7 @@ import card3 from "../assets/images/cards/Mastercard.png"
 import card4 from "../assets/images/cards/Visa.png"
 import card5 from "../assets/images/cards/PayPal.png"
 
-const Footer = () => {
+const UserFooter = () => {
     return (
         <footer className="bg-gray-800 text-white py-8">
             <div className="max-w-6xl mx-auto px-4">
@@ -100,4 +100,4 @@ const Footer = () => {
     );
 }
 
-export default Footer;
+export default UserFooter;

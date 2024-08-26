@@ -4,17 +4,16 @@ import { Link } from 'react-router-dom';
 
 const CollectionList = () => {
   const [products, setProducts] = useState([]);
-  const apiUrl = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
-    axios.get(`${apiUrl}/products`)
+    axios.get('http://localhost:4000/products')
       .then((result) => {
         console.log('API Response:', result.data); 
         setProducts(result.data);
       }).catch((err) => {
         console.log('Error fetching the collections:', err);
       });
-  }, [apiUrl]);
+  }, []);
 
   return (
     <div className="container mx-auto p-4">

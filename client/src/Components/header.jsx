@@ -1,19 +1,11 @@
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faShoppingCart, faUser } from '@fortawesome/free-solid-svg-icons';
-import { AuthContext } from './AuthContext';
-import React, { useContext } from 'react';
+import React, { useState } from 'react';
 
 
-export function Navbar() {
-
-    const { user, setUser } = useContext(AuthContext);
-    const handleLogout = () => {
-        const confirmLogout = window.confirm("Do you sure to LogOut?");
-        if (confirmLogout) {
-            setUser(null);
-        }
-    };
+const UserHeader=()=>{
+    const {user , setUser} = useState();
 
     return (
         <>
@@ -44,8 +36,8 @@ export function Navbar() {
                             <div>
                                 {user ? (
                                     <>
-                                        <span className="text-gray-700 font-bold mr-4">Welcome, {user.FirstName}!</span>
-                                        <button className="bg-red-500 hover:bg-red-700 text-white text-sm py-1 px-2 rounded" onClick={handleLogout}>
+                                        <span className="text-gray-700 font-bold mr-4">Welcome!</span>
+                                        <button className="bg-red-500 hover:bg-red-700 text-white text-sm py-1 px-2 rounded" >
                                             Logout
                                         </button>
                                     </>
@@ -69,3 +61,5 @@ export function Navbar() {
         </>
     )
 }
+
+export default UserHeader;
