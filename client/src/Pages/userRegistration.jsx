@@ -1,20 +1,17 @@
 import axios from 'axios';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { AuthContext } from '../Components/AuthContext';
 
 function Registration() {
     const initialState = {
-        userName: "",
-        LastName: "",
+        name: "",
         email: "",
-        password: "",
-        phoneNumber: ""
+        phonenumber: "",
+        password: ""
     };
 
     const [formData, setFormData] = useState(initialState);
     const [editMode, setEditMode] = useState(false);
-    const { setUser } = useContext(AuthContext);
     const { id } = useParams();
 
     const handleOnChange = (e) => {
@@ -25,14 +22,11 @@ function Registration() {
     };
 
     const navigate = useNavigate();
-
     useEffect(() => {
         const getById = async () => {
             try {
-                const result = await axios.get(`http://localhost:4000/getuserbyId/${id}`);
+                const result = await axios.get(`http://localhost:4000/user/getuserbyId/${id}`);
                 setFormData(result.data.data);
-                setUser(result.data.data);
-                console.log(setUser);
             } catch (err) {
                 console.log("Error While Getting Data From this Id", id, " ", err);
             }
@@ -44,20 +38,20 @@ function Registration() {
         } else {
             setEditMode(false);
         }
-    }, [id, setUser]);
+    }, [id]);
 
     const handleOnSubmit = async (e) => {
         e.preventDefault();
         try {
             if (editMode) {
-                await axios.put(`http://localhost:4000/update/${id}`, formData);
+                await axios.put(`http://localhost:4000/user/update/${id}`, formData);
                 alert("Data Was Updated");
             } else {
-                await axios.post('http://localhost:4000/usercreate', formData);
+                await axios.post('http://localhost:4000/user/usercreate', formData);
                 alert("Data Was Posted");
             }
             setFormData(initialState);
-            navigate("/user");
+            navigate("/verify-otp" , { state: { email: formData.email } });
         } catch (err) {
             console.log(`Data didn't ${editMode ? 'update' : 'post'}`, err.message);
         }

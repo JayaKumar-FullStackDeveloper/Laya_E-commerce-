@@ -4,6 +4,10 @@ import UserLayout from '../usersLayout';
 import { AdminRoute, UserRoute } from '../Components/ProtectedRoutes';
 import Homepage from '../Pages/home';
 import { AuthProvider } from '../Components/AuthProvider';
+import UserLogin from '../Pages/userLogin';
+import Registration from '../Pages/userRegistration';
+import OtpVerification from '../Pages/OtpVerify';
+
 
 export const router = createBrowserRouter([
   {
@@ -19,31 +23,29 @@ export const router = createBrowserRouter([
         element: <UserLayout/>,
         children: [
           { path: '', element: <Homepage /> },
+          { path: 'userLogin', element: <UserLogin /> },
+          { path: 'userSignup', element: <Registration/> },
+          { path: 'verify-otp', element: <OtpVerification/> },
          
           
         ],
       },
 
-      // User-specific protected routes
+      
       {
         path: '/user',
         element: <UserRoute />,
         children: [
-          // { path: 'dashboard', element: <UserDashboard /> }, // Example user-specific route
-          // { path: 'profile', element: <UserProfile /> }, // Example user-specific route
-          // Add more protected user routes here
+        
         ],
       },
 
-      // Admin routes with protection
       {
         path: '/admin',
         element: <AdminRoute />,
         children: [
         ],
       },
-
-      // 404 Route (Catch-all)
     
     ],
   },

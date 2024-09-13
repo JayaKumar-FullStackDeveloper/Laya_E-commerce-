@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faShoppingCart, faUser } from '@fortawesome/free-solid-svg-icons';
-import React, { useState } from 'react';
-
+import React from 'react';
+import { useAuth } from '../Components/AuthProvider';
 
 const UserHeader=()=>{
-    const {user , setUser} = useState();
-
+    const { user, logout } = useAuth();
+   
     return (
         <>
             <nav className="bg-white shadow-md sticky top-0 z-50">
@@ -37,12 +37,15 @@ const UserHeader=()=>{
                                 {user ? (
                                     <>
                                         <span className="text-gray-700 font-bold mr-4">Welcome!</span>
-                                        <button className="bg-red-500 hover:bg-red-700 text-white text-sm py-1 px-2 rounded" >
+                                        {/* <span className="text-gray-700 font-bold mr-4">{user.email}</span>         */}
+                                        <button className="bg-red-500 hover:bg-red-700 text-white text-sm py-1 px-2 rounded"
+                                         onClick={logout}
+                                        >
                                             Logout
                                         </button>
                                     </>
                                 ) : (
-                                    <Link to="/userlogin" className="ml-4 text-gray-700 hover:text-blue-900">
+                                    <Link to="/userLogin" className="ml-4 text-gray-700 hover:text-blue-900">
                                         <FontAwesomeIcon icon={faUser} className="text-lg" />
                                         <span className="text-gray-700 pl-3 py-2 hover:text-blue-900 rounded-md text-l font-semibold">Login</span>
                                     </Link>

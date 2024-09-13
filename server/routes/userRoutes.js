@@ -12,7 +12,7 @@ const {
 const { protectUser } = require('../middleware/userMiddleware');
 
 // Route to register a new user
-router.post('/register', registerUser);
+router.post('/usercreate', registerUser);
 
 // Route to verify OTP for user registration
 router.post('/verify-otp', verifyOTP);

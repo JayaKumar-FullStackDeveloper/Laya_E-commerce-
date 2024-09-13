@@ -1,10 +1,13 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
-
+import { useAuth } from '../Components/AuthProvider';
 
 function UserLogin() {
+
+    const { login } = useAuth();
     const [formData, setFormData] = useState({ email: '', password: '' });
     const [showPassword, setShowPassword] = useState(false);
     const [error, setError] = useState('');
@@ -17,7 +20,17 @@ function UserLogin() {
     const handleOnSubmit = async (e) => {
         e.preventDefault();
         try {
-
+            const response = await axios.post("http://localhost:4000/user/signin", formData);
+              console.log(response, "res");
+              
+             
+              const userResponse = await axios.get("http://localhost:4000/user/me", {
+                headers: { Authorization: `Bearer ${response.data.token}` },
+              });
+        
+              login(userResponse.data, response.data.token);
+              console.log('Login Successful');
+              navigate('/');
         } catch (err) {
             setError(err.response?.data?.message || 'An error occurred. Please try again.');
         }
@@ -77,7 +90,7 @@ function UserLogin() {
                 <p className="text-pink-600">Don't have an account?</p>
                 <button
                     className="text-pink-500 hover:text-pink-700 font-bold"
-                    onClick={() => navigate('/userregistration')}
+                    onClick={() => navigate('/userSignup')}
                 >
                     Register Here
                 </button>
