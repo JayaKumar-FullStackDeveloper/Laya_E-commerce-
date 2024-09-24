@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../Components/AuthProvider';
+import { Link } from 'react-router-dom';
+
 
 function UserLogin() {
 
@@ -46,7 +48,7 @@ function UserLogin() {
             {error && <div className="mb-4 text-red-600">{error}</div>}
             <form onSubmit={handleOnSubmit}>
                 <div className="mb-4">
-                    <label className="block text-pink-600 text-sm font-bold mb-2" htmlFor="email">
+                    <label className="block text-pink-600 text-sm text-left font-bold mb-2" htmlFor="email">
                         Email
                     </label>
                     <input
@@ -60,7 +62,7 @@ function UserLogin() {
                     />
                 </div>
                 <div className="mb-4 relative">
-                    <label className="block text-pink-600 text-sm font-bold mb-2" htmlFor="password">
+                    <label className="block text-pink-600 text-sm text-left font-bold mb-2" htmlFor="password">
                         Password
                     </label>
                     <input
@@ -79,6 +81,8 @@ function UserLogin() {
                         <FontAwesomeIcon icon={showPassword ?  faEye: faEyeSlash } className="text-pink-600" />
                     </div>
                 </div>
+
+                <Link to={'/forgot-password'} ><span className='block text-pink-600 text-sm text-right font-bold mb-3 hover:text-pink-800'>Forgot Password?</span></Link>
                 <button
                     className="bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full"
                     type="submit"

@@ -7,6 +7,7 @@ import { AuthProvider } from '../Components/AuthProvider';
 import UserLogin from '../Pages/userLogin';
 import Registration from '../Pages/userRegistration';
 import OtpVerification from '../Pages/OtpVerify';
+import PasswordReset from '../Pages/passwordReset';
 
 
 export const router = createBrowserRouter([
@@ -26,7 +27,9 @@ export const router = createBrowserRouter([
           { path: 'userLogin', element: <UserLogin /> },
           { path: 'userSignup', element: <Registration/> },
           { path: 'verify-otp', element: <OtpVerification/> },
-         
+          { path: 'userSignup/update/:id', element: <Registration/> },
+          { path: 'verify-otp', element: <OtpVerification /> },
+          { path: 'forgot-password', element: <PasswordReset/> },
           
         ],
       },

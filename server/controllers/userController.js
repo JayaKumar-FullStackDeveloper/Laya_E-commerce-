@@ -165,28 +165,39 @@ const resetpassword = asyncHandler(async (req, res) => {
 
 const resendOTP = asyncHandler(async (req, res) => {
   const { email } = req.body;
+
   try {
+    // Find user by email
     const user = await User.findOne({ email });
+
     if (!user) {
       return res.status(404).json({ message: "User not found" });
     }
 
+    // Check if user is already verified
     if (user.isVerified) {
       return res.status(400).json({ message: "User already verified" });
     }
 
+    // Generate new OTP and update timestamps
     const otp = generateOTP();
     user.otp = otp;
-    user.otpCreatedAt = new Date();
+    user.otpCreatedAt = new Date(); // Update OTP creation time
     await user.save();
 
+    // Send OTP email to user
     await sendEmail(user.email, "Email verification", verifyEmailTemplate(otp, user.name));
+
+    // Return success response
     res.json({ message: `OTP resent to email ${user.email}` });
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ success: false, message: "Server error" });
+    console.error("Error resending OTP:", error.message || error);
+
+    // Send error response
+    res.status(500).json({ success: false, message: "Server error while resending OTP" });
   }
 });
+
 
 const updateUserById = async (req, res) => {
   try {
